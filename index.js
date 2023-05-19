@@ -35,10 +35,8 @@ const textGeneration = async (prompt) => {
             response: `${response.data.choices[0].text}`
         };
     } catch (error) {
-        return {
-            status: 0,
-            response: ''
-        };
+        console.error('ChatGPT API error:', error);
+        return getErrorMessage(error);
     }
 };
 
@@ -118,8 +116,8 @@ webApp.post('/dialogflow', async (req, res) => {
                 ''
             ));
         } else {
-           res.send(getErrorMessage());
-       }
+            res.send(getErrorMessage());
+        }
 
     } else {
         res.send(
