@@ -87,9 +87,9 @@ const getErrorMessage = () => {
         [
             'We are facing a technical issue.'
         ],
-        '',
-        '',
-        ''
+        'Hey',
+        'Hi',
+        'Waddup'
     );
 };
 
