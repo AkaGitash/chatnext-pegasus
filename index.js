@@ -108,7 +108,7 @@ webApp.post('/dialogflow', async (req, res) => {
 
     if (tag === 'sampleResponse') {
         let result = await textGeneration(query);
-//         if (result.status == 1) {
+        if (result.status == 1) {
             res.send(formatResponseForDialogflow(
                 [
                     result.response
@@ -117,9 +117,9 @@ webApp.post('/dialogflow', async (req, res) => {
                 '',
                 ''
             ));
-//         } else {
-          //  res.send(getErrorMessage());
-      //  }
+        } else {
+           res.send(getErrorMessage());
+       }
 
     } else {
         res.send(
