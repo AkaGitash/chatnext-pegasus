@@ -81,11 +81,11 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
     return responseData
 };
 
-const getErrorMessage = () => {
-
+const getErrorMessage = (error) => {
+    console.error('ChatGPT API error:', error);
     return formatResponseForDialogflow(
         [
-            'We are facing a technical issue.'
+            'We are facing a technical issue. Please try again later.'
         ],
         '',
         '',
